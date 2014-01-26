@@ -19,18 +19,6 @@ public class FirstPersonController : MonoBehaviour {
 
 
 
-	// Rotation
-	public float sensitivityX = 15F;
-	public float sensitivityY = 15F;
-	
-	public float minimumX = -360F;
-	public float maximumX = 360F;
-	
-	public float minimumY = -90F;
-	public float maximumY = 90F;
-	
-	float rotationX = 0F;
-	float rotationY = 0F;
 	Quaternion originalRotation;
 	
 	void Start () {
@@ -68,27 +56,20 @@ public class FirstPersonController : MonoBehaviour {
 		characterController.Move( speed * Time.deltaTime );
 
 
-		// Rotation
-		// Read the mouse input axis
-		rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-		rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+
 		
-		rotationX = ClampAngle (rotationX, minimumX, maximumX);
-		rotationY = ClampAngle (rotationY, minimumY, maximumY);
+		float rotLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
+		transform.Rotate(0, rotLeftRight, 0);
 		
-		Quaternion xQuaternion = Quaternion.AngleAxis (rotationX, Vector3.up);
-		Quaternion yQuaternion = Quaternion.AngleAxis (rotationY, -Vector3.right);
 		
-		transform.localRotation = originalRotation * xQuaternion * yQuaternion;
+		verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+		verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
+		Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 		
 	}
-	
-	private static float ClampAngle (float angle, float min, float max)
-	{
-		if (angle < -360F)
-			angle += 360F;
-		if (angle > 360F)
-			angle -= 360F;
-		return Mathf.Clamp (angle, min, max);
-	}
+
 }
+
+
+
+

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{49EE4F44-C000-0261-8443-F1C786F5B90F}") = "Virtual Bucknell", "Assembly-CSharp-firstpass.csproj", "{1683FBF7-8597-A852-C642-DB16288003F1}"
 EndProject
+Project("{49EE4F44-C000-0261-8443-F1C786F5B90F}") = "Virtual Bucknell", "Assembly-UnityScript-Editor.unityproj", "{8459F00F-8D77-44DD-6CD4-CE3DC6A6EF70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{1683FBF7-8597-A852-C642-DB16288003F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1683FBF7-8597-A852-C642-DB16288003F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1683FBF7-8597-A852-C642-DB16288003F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8459F00F-8D77-44DD-6CD4-CE3DC6A6EF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8459F00F-8D77-44DD-6CD4-CE3DC6A6EF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8459F00F-8D77-44DD-6CD4-CE3DC6A6EF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8459F00F-8D77-44DD-6CD4-CE3DC6A6EF70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+											GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -35,4 +41,5 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
+
 EndGlobal
